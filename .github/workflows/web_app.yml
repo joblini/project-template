@@ -24,7 +24,7 @@ jobs:
   - uses: actions/checkout@master
   # setup python
   - name: Setup Python
-    uses: actions/setup-python@v1
+    uses: actions/setup-python@v4
     with:
      python-version: ${{ env.PYTHON_VERSION }}
 
@@ -32,7 +32,6 @@ jobs:
   - name: python install
     working-directory: ${{ env.WORKING_DIRECTORY }}
     run: |
-     sudo apt update
      # Add deadsnakes PPA to ensure Python 3.10 support
      sudo add-apt-repository ppa:deadsnakes/ppa -y
      sudo apt update
