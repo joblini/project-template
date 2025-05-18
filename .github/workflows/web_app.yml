@@ -32,6 +32,8 @@ jobs:
     working-directory: ${{ env.WORKING_DIRECTORY }}
     run: |
      sudo apt update
+     sudo apt list -a python3.10-venv
+     sudo apt list -a python${{ env.PYTHON_VERSION }}-venv
      sudo apt install python${{ env.PYTHON_VERSION }}-venv
      python -m venv --copies antenv
      source antenv/bin/activate
